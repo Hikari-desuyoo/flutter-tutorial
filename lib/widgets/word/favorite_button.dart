@@ -2,10 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_tutorial/main.dart';
 
 class FavoriteButton extends StatelessWidget {
-  const FavoriteButton({
-    super.key,
-    required this.appState
-  });
+  const FavoriteButton({super.key, required this.appState});
 
   final AppState appState;
 
@@ -18,12 +15,19 @@ class FavoriteButton extends StatelessWidget {
       icon = Icons.favorite_border;
     }
 
-    return ElevatedButton.icon(
-      onPressed: () {
-        appState.toggleFavorite();
-      },
-      icon: Icon(icon),
-      label: const Text('Like'),
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(40, 0, 0, 0),
+      child: ElevatedButton(
+        onPressed: () {
+          appState.toggleFavorite();
+        },
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all<Color>(appState.color)
+        ),
+        child: Icon(icon,
+          color: Colors.white
+        ), // Use Icon as the child of the button
+      ),
     );
   }
 }

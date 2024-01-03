@@ -20,6 +20,7 @@ class WordInteractive extends StatelessWidget {
         padding: const EdgeInsets.fromLTRB(150, 0, 0, 0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               children: [
