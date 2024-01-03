@@ -1,15 +1,14 @@
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_tutorial/main.dart';
 
 class WordDisplay extends StatelessWidget {
   const WordDisplay({
     super.key,
-    required this.word,
-    required this.color,
+    required this.appState
   });
 
-  final WordPair word;
-  final Color color;
+  final AppState appState;
 
   @override
   Widget build(BuildContext context) {
@@ -23,10 +22,10 @@ class WordDisplay extends StatelessWidget {
               Radius.circular(50.0), // Set radius for bottom right corner
         ),
       ),
-      color: color,
+      color: appState.color,
       child: Padding(
         padding: const EdgeInsets.all(10.0),
-        child: Text('${word.first} ${word.second}',
+        child: Text('${appState.word.first} ${appState.word.second}',
             style: const TextStyle(color: Colors.white, fontSize: 100.0)),
       ),
     );

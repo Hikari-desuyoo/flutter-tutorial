@@ -10,14 +10,12 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var appState = context.watch<AppState>();
-    var word = appState.word;
-    var color = appState.color;
 
     return Scaffold(
       backgroundColor: Colors.black,
       body: CustomPaint(
-          painter: BackgroundPainter(color: color),
-          child: WordInteractive(appState: appState, word: word, color: color)),
+          painter: BackgroundPainter(color: appState.color),
+          child: WordInteractive(appState: appState)),
     );
   }
 }
